@@ -1,0 +1,116 @@
+/* 
+ * Web Engineering WS 20/21
+ * Semsterprojekt SPA "Blogger"
+ * Gruppe 12
+ * Simon Nunez Aschenbrenner (908606)
+ */
+
+/* CHANGES FOR LARGE VIEWPORTS (DESKTOP) */
+
+@media only screen and (min-width: 60em) {
+
+    #user-nav {
+        position: fixed;
+        margin: 0rem;
+        top: 0rem;
+        left: 0rem;
+        height: 8.5rem;
+        width: 100%;
+    }
+    #logo {
+        height: 7rem;
+        position: fixed;
+        top: 0rem;
+        left: 50%;
+        margin-left: -3rem;
+    }
+    #auth-status {
+        position: fixed;
+        top: 2.5rem;
+        right: 1.5rem;
+    }
+    #user-slot {
+        position: fixed;
+        top: 3rem;
+        right: 1.5rem;
+    }
+    #sign-in-or-out-button {
+        position: fixed;
+        top: 5rem;
+        right: 1.5rem;
+    }
+
+    #blog-nav-slot {
+        max-width: calc(50vw - 5rem);
+        position: fixed;
+        top: 2.75rem;
+        left: 0rem;
+        margin-top: 0rem;
+    }
+
+    #current-blog-slot {
+        position: fixed;
+        top: 8.5rem;
+        left: 0rem;
+        width: 9.5rem;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    #current-blog-slot a::after {
+        content: "(Öffentliche Ansicht anzeigen)";
+        margin: 0rem 0rem 1rem 0rem;
+        font-size: 0.67rem;
+        font-weight: normal;
+        display: block;
+        visibility: hidden;
+    }
+    #current-blog-slot a:hover::after {
+        margin: 0rem 0rem 1rem 0rem;
+        font-size: 0.67rem;
+        font-weight: normal;
+        display: block;
+        visibility: visible;
+    }
+    #current-blog-slot .info {
+        margin-top: 1rem;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    #current-blog-slot .info span {
+        margin-bottom: 0.5rem;
+    }
+
+    main {
+        margin: 10rem 1.5rem 1.5rem 14rem;
+    }
+
+    .post-detail .summary {
+        width: calc(100vw - 15.5rem);
+    }
+
+    form input {
+        width: calc(100vw - 20rem);
+    }
+}
+
+/* CHANGES FOR VERY WIDE VIEWPORTS */
+
+@media only screen and (min-width: 75rem) {
+
+    main {
+        margin-right: 0.75rem;
+    }
+    .blog-summary {
+        justify-content: flex-start;
+    }
+    .blog-summary header button {
+        margin-right: 0.75rem;
+    }
+
+    .blog-summary .summary {
+        max-width: calc((100vw - 22rem) / 3);
+        margin-right: 0.75rem;
+    }
+}

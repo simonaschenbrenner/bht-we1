@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<!--
+    Web Engineering WS 20/21
+    Semsterprojekt SPA "Blogger"
+    Gruppe 12
+    Simon Nunez Aschenbrenner (908606)
+-->
+
+<html lang="de">
+
+    <head>
+
+        <title>BLOX</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="./js/login.js" defer></script>
+        <script src="./js/model.js" defer></script>
+        <script src="./js/presenter.js" defer></script>
+        <script src="./js/router.js" defer></script>
+        <script src="./js/view.js" defer></script> 
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://apis.google.com/js/api.js" async defer></script>
+
+        <link type="text/css" rel="stylesheet" href="/css/colors.css">
+        <link type="text/css" rel="stylesheet" href="/css/mobile.css">
+        <link type="text/css" rel="stylesheet" href="/css/small.css">
+        <link type="text/css" rel="stylesheet" href="/css/medium.css">
+        <link type="text/css" rel="stylesheet" href="/css/large.css">
+
+    </head>
+
+    <body>
+
+        <header>
+            <nav id="user-nav">
+                <object id="logo" data="/img/logo.svg" height="100">
+                    <img src="/img/logo.png" height="100" alt="BLOX Logo">
+                </object>
+                <div id="user-slot"></div>
+                <button id="sign-in-or-out-button"></button>
+                <span id="auth-status"></span>
+            </nav>
+            <nav id="blog-nav-slot"></nav>
+            <div id="current-blog-slot"></div>
+        </header>
+        
+        <main id="main-content"></main>
+
+        <div id="templates" hidden>
+
+            <div id="user">
+                %owner
+            </div>
+
+            <div id="blog-nav">
+                <h1>MEINE BLOX</h1>
+                <ul>
+                    <li class="link">
+                        <a href="/blogs/%bid">%name (%postCount Posts)</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="current-blog">
+                <h2 class="link">
+                    <a href="%url" target="_blank">%name</a> 
+                </h2>
+                <p class="blog info">
+                    <span class="post-count">%postCount Posts</span>
+                    <span>Veröffentlicht am %published</span>
+                    <span>Zuletzt geändert am %updated</span>
+                </p>
+            </div>
+
+            <div id="blog-summary" class="container blog-summary">
+                <header>
+                    <h1>BLOGÜBERSICHT</h1>
+                    <button class="highlight" data-path="/edit/%bid/">Post hinzufügen</button>
+                </header>
+                <article class="post summary">
+                    <header class="post title">
+                        <h3>%title</h3>
+                    </header>
+                    <p class="post info">
+                        <span>Veröffentlicht am %published</span>
+                        <span>Zuletzt geändert am %updated</span>
+                        <span class="comment-count">(%commentCount Kommentare)</span>
+                    </p>
+                    <nav class="post nav">
+                        <button class="highlight" data-path="/posts/%bid/%pid">Detailansicht</button>
+                        <button data-path="/edit/%bid/%pid">Editieren</button>
+                        <button class="warn" data-action="delete-post" data-bid="%bid" data-pid="%pid">Löschen</button>
+                    </nav>
+                </article>
+            </div>
+
+            <div id="post-detail" class="container post-detail">
+                <header>
+                    <h1>DETAILANSICHT</h1>
+                    <button class="highlight" data-path="/blogs/%bid">Zurück zur Blogübersicht</button>
+                </header>
+                <article>
+                    <header class="post summary">
+                        <header class="post title">
+                            <h3>%title</h3>
+                        </header>
+                        <p class="post info">
+                            <span>Veröffentlicht am %published</span>
+                            <span>Zuletzt geändert am %updated</span>
+                        </p>
+                        <nav class="post nav">
+                            <button data-path="/edit/%bid/%pid">Editieren</button>
+                            <button class="warn" data-action="delete-post" data-bid="%bid" data-pid="%pid">Löschen</button>
+                        </nav>
+                    </header>
+                    <section class="post content">
+                        %content
+                    </section>
+                </article>
+                <h4>Kommentare</h4>
+                <article class="comment summary">
+                    <header class="comment info">
+                        <span>%author</span>
+                        <span>%published</span>
+                    </header>
+                    <section class="comment content">
+                        %content
+                    </section>
+                    <nav class="comment nav">
+                        <button class="warn" data-action="delete-comment" data-bid="%bid" data-pid="%pid" data-cid="%cid">Löschen</button>
+                    </nav>
+                </article>
+            </div>
+
+            <div id="post-edit" class="edit">
+                <h1>POST EDITIEREN</h1>
+                <p class="post info">
+                    <span>Veröffentlicht am %published</span>
+                    <span>Zuletzt geändert am %updated</span>
+                </p>
+                <form>
+                    <label for="title">Titel:</label>
+                    <input class="input" id="title" type="text" name="title" maxlength="32" value="%title">
+                </form>
+                <div class="post content input" id="post-content" class="post-content" contentEditable>
+                    %content
+                </div>
+                <nav class="edit nav">
+                    <button class="highlight" type="submit" value="save" data-action="save">Speichern</button>
+                    <button class="warn" type="button" value="cancel" data-action="cancel">Abbrechen</button>
+                </nav>                
+            </div>
+
+            <div id="post-add" class="add">
+                <h1>POST HINZUFÜGEN</h1>
+                <form>
+                    <label for="title">Titel:</label>
+                    <input class="input" id="title" type="text" name="title" maxlength="32" value="">
+                    <label for="content">Inhalt:</label>
+                    <textarea class="post content input" id="content" type="text" name="content" placeholder="Inhalt" value = ""></textarea>
+                </form>
+                <nav class="edit nav">
+                    <button class="highlight" type="submit" value="save" data-action="save">Speichern</button>
+                    <button class="warn" type="button" value="cancel" data-action="cancel">Abbrechen</button>
+                </nav>
+            </div>
+        
+        </div>
+
+    </body>
+
+</html>

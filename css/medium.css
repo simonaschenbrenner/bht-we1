@@ -1,0 +1,95 @@
+/* 
+ * Web Engineering WS 20/21
+ * Semsterprojekt SPA "Blogger"
+ * Gruppe 12
+ * Simon Nunez Aschenbrenner (908606)
+ */
+
+/* CHANGES FOR MEDIUM VIEWPORTS (TABLET) */
+
+@media only screen and (min-width: 40em) {
+
+    #user-nav {
+        height: 7.75rem;
+        margin: 0.75rem
+    }
+    #auth-status {
+        position: absolute;
+        top: 2.5rem;
+        right: 1.5rem;
+    }
+    #user-slot {
+        position: absolute;
+        top: 3rem;
+        right: 1.5rem;
+    }
+    #sign-in-or-out-button {
+        position: absolute;
+        top: 5rem;
+        right: 1.5rem;
+    }
+
+    #blog-nav-slot {
+        margin: 1.5rem;
+    }
+
+    #current-blog-slot {
+        padding: 1.5rem;
+    }
+    #current-blog-slot .info, .edit .info {
+        display: flex;
+        flex-direction: row;
+    }
+    #current-blog-slot .info span, .edit .info span {
+        margin: 0rem 1rem 0rem 0rem;
+    }
+    #current-blog-slot .info :last-child, .edit .info :last-child {
+        margin: 0rem;
+    }
+
+    main {
+        margin: 1.5rem;
+    }
+
+    .container header:not(.post):not(.comment) {
+        margin-bottom: 0.75rem;
+    }
+    
+    .blog-summary .summary {
+        max-width: calc(50% - 2rem);
+    }
+
+    .post-detail .summary {
+        width: calc(100vw - 3rem);
+    }
+
+    .post.content:not(.input) {
+        margin-bottom: 3rem;
+    }
+
+    h4 {
+        padding-top: 3rem;
+    }
+
+    .edit .info {
+        width: auto;
+    }
+
+    form input {
+        width: calc(100vw - 7.5rem);
+    }
+
+    .edit.nav {
+        justify-content: flex-end;
+    }
+    .edit.nav .warn {
+        margin-left: 1rem;
+    }
+
+    .add.nav {
+        justify-content: flex-end;
+    }
+    .add.nav .warn {
+        margin-left: 1rem;
+    }
+}

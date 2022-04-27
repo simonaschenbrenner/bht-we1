@@ -1,0 +1,309 @@
+/* 
+ * Web Engineering WS 20/21
+ * Semsterprojekt SPA "Blogger"
+ * Gruppe 12
+ * Simon Nunez Aschenbrenner (908606)
+ */
+
+/* MAIN DESIGN - FOR VERY SMALL VIEWPORTS (MOBILE) */
+
+/* GENERAL */
+
+body {
+    min-width: 10em;
+    margin: 0em;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+main {
+    margin: 0.75rem 0.75rem 1.5rem;
+}
+
+h1 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0rem 0rem 0.75rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 0rem 0rem 0.75rem;
+}
+
+h3 {
+    margin: 0rem 0rem 0.67rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+h4 {
+    width: 100%;
+    border-top: 1px solid;
+    padding-top: 1.5rem;
+    margin: 0rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+p {
+    margin: 0rem;
+}
+
+button {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.33rem;
+    padding: 0.25rem 0.67rem 0.33rem;
+    margin: 0rem;
+    text-align: center;
+}
+button:hover {
+    cursor: pointer;
+}
+
+a:link {
+    color: inherit;
+}
+a:hover {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+a:visited {
+    color: inherit;
+}
+
+.logo:hover {
+    filter:url(../img/logo.svg#hover);
+    cursor: pointer;
+}
+
+.info {
+    margin: 0rem;
+    font-size: 0.67rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.info span {
+    margin-bottom: 0.33rem;
+}
+.info :last-child {
+    margin-bottom: 0rem;
+}
+
+/* HEADER */
+
+#user-nav {
+    margin: 0.75rem 0.75rem 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+#logo {
+    height: 6rem;
+    order: 1;
+    margin: 0.75rem 0rem 1.5rem;
+    align-self: center;
+}
+#user-slot {
+    margin: 0.5rem 0rem 0.33rem;
+    order: 3;
+}
+#sign-in-or-out-button {
+    order: 4;
+}
+#auth-status {
+    font-size: 0.5rem;
+    order: 2;
+    margin: 0rem;
+}
+
+#blog-nav-slot {
+    margin: 1.5rem 0.75rem 1.5rem;
+}
+#blog-nav-slot ul {
+    margin: 0.5rem 0rem;
+    padding: 0rem;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#blog-nav-slot ul li {
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+}
+#blog-nav-slot ul :last-child {
+    margin-bottom: 0rem;
+}
+
+#current-blog-slot {
+    padding: 1rem;
+}
+#current-blog-slot a:hover::after {
+    content: "(Öffentliche Ansicht anzeigen)";
+    margin: 0.67rem;
+    font-size: 0.67rem;
+    visibility: visible;
+}
+
+/* MAIN */
+
+/* General */
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0rem;
+}
+
+.summary {
+    width: 100%;
+    margin: 0.75rem 0rem 0rem;
+    padding: 0.75rem;
+    border: 1px solid;
+    border-radius: 0.33rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0.33rem 0rem 0rem;
+}
+.nav button {
+    margin: 0.33rem 0.33rem 0rem 0rem;
+}
+.nav .warn {
+    justify-self: flex-end;
+    margin-left: auto;
+    margin-right: 0rem;
+}
+
+/* Blog Summary */
+
+.blog-summary header h1 {
+    order: 2;
+    margin-bottom: 0rem;
+}
+.blog-summary header button {
+    order: 1;
+    margin-bottom: 1.5rem;
+}
+
+/* Post Detail */
+
+.post-detail header h1 {
+    display: none;
+}
+.post-detail header button {
+    margin-bottom: 1rem;
+}
+
+.post-detail .post.summary {
+    border: none;
+    padding: 0rem;
+}
+
+.post.content:not(.input) {
+    margin: 1.5rem 0em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.post.content p {
+    margin-bottom: 0.5rem;
+}
+.post.content :last-child {
+    margin-bottom: 0rem;
+}
+.separator {
+    margin-bottom: 0.5rem;
+}
+
+a img {
+    height: auto;
+    max-width: 100%;
+}
+
+.comment.info {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+.comment.info :first-child {
+    font-size: 1rem;
+}
+.comment.content {
+    margin: 1rem 0rem 0rem;
+}
+
+/* Post Edit / Add */
+
+.edit:not(.nav), .add {
+    margin-top: 1.5rem;
+}
+
+form {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+form input {
+    min-width: 4rem;
+    width: calc(100vw - 6rem);
+}
+
+.add form {
+    flex-wrap: wrap;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.input {
+    width: available;
+    font-size: 1rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.33rem;
+    padding: 0.67rem 0.75rem 0.75rem;
+    margin: 0rem;
+    text-align: left;
+}
+
+.post.content.input {
+    margin: 1rem 0rem; 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+[for=content] {
+    display: none;
+}
+
+textarea {
+    width: 100%;
+    min-height: 33vh;
+}

@@ -1,0 +1,63 @@
+<!--
+    Web Engineering WS 20/21
+    Semsterprojekt SPA "Blogger"
+    Gruppe 12
+    Simon Nunez Aschenbrenner (908606)
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 561.94 559.96">
+    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="../css/colors.css" type="text/css"/>
+    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="../css/mobile.css" type="text/css"/>
+    <g class="logo" onclick="window.top.location.href='/blogs';">
+        <path
+            class="back"
+            d="M302.82,200c-117.68,2.88-215.11,79-231.41,181.7a200.36,200.36,0,0,1,184.9-123.17c110.63,0,200.31,89.69,200.31,200.31a200.37,200.37,0,0,1-139.84,191C418.56,624.29,526,541.47,522,407.82,518.2,284.17,430.16,196.87,302.82,200Z"
+            transform="translate(-10.12 -149.9)"
+            fill="#009fe3"
+        />
+        <path
+            class="front"
+            d="M71.77,522.33H98.94c4.86,0,8.63-.68,11.34-2q7.35-3.76,7.35-14.41,0-9-7.13-12.38-4-1.87-11.18-2H71.77Z"
+            transform="translate(-10.12 -149.9)"
+            fill="#312783"
+        />
+        <path
+            class="front"
+            d="M115.36,459.43q0-8.07-6-10.65A40.6,40.6,0,0,0,96.12,447H71.77v25.46H99q7.29,0,11.84-2.86T115.36,459.43Z"
+            transform="translate(-10.12 -149.9)"
+            fill="#312783"
+        />
+        <path
+            class="front"
+            d="M287.87,443.84q-13.89,0-22.17,10.58t-8.28,30.07q0,19.51,8.28,30.08t22.17,10.58q13.9,0,22.06-10.58t8.16-30.08q0-19.42-8.16-30T287.87,443.84Z"
+            transform="translate(-10.12 -149.9)"
+            fill="#312783"
+        />
+        <path
+            class="front"
+            d="M410.36,542.38,389.09,503l-22.47,39.37H339.44l36-58.83-34.25-56.63h27.95l20,37.6,20.51-37.6h27l-30.72,55.69L438.57,542a210.61,210.61,0,0,0,19.16-88.14c0-113.75-87.44-196-197.72-196-101.4,0-187.08,68.07-199.89,169.06h50.12q20.48.31,29,12.3a30,30,0,0,1,5.13,17.62q0,10.57-5.18,17a26.82,26.82,0,0,1-8.54,6.58,25.05,25.05,0,0,1,12.93,10.18q4.36,7,4.36,16.92a34.57,34.57,0,0,1-5,18.41A31.77,31.77,0,0,1,135,535a30.34,30.34,0,0,1-12.64,5.79,74.89,74.89,0,0,1-15.82,1.57H77.73c32.09,69.47,100.78,117.48,180.35,117.48s148.25-48,180.33-117.48Zm-174.22,0H156.86V426.92h23.39v94.7h55.89Zm51.73,3.21q-24,0-36.67-13.47-17-16.53-17-47.63,0-31.71,17-47.62,12.68-13.47,36.67-13.47t36.68,13.47q16.93,15.9,16.93,47.62,0,31.11-16.93,47.63Q311.86,545.59,287.87,545.59Z"
+            transform="translate(-10.12 -149.9)"
+            fill="#312783"
+        />
+    </g>
+    <!-- Filter build with https://svgfilters.com -->
+    <filter id="hover">
+        <!-- 6f5e2d6a-c2c6-42e7-ab3d-47807b79ff5f -->
+        <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="6f5e2d6a-c2c6-42e7-ab3d-47807b79ff5f"></feGaussianBlur>
+        <!-- 892e3072-2155-4be7-a780-037095258086 -->
+        <feColorMatrix in="6f5e2d6a-c2c6-42e7-ab3d-47807b79ff5f" result="892e3072-2155-4be7-a780-037095258086" values="5 0 0 0 0,
+        0 7 0 0 0,
+        0 0 7 0 0,
+        0 0 0 0.5 0"></feColorMatrix>
+        <!-- bfbb0a2c-858a-46fb-b50f-c78cd1764a44 -->
+        <feColorMatrix in="SourceGraphic" result="bfbb0a2c-858a-46fb-b50f-c78cd1764a44" values="1 0 0 0 0,
+        0 1.5 0 0 0,
+        0 0 1.5 0 0,
+        0 0 0 1 0"></feColorMatrix>
+        <!-- e1dec255-fc52-490c-81e6-ec51c06c6f94 -->
+        <feMerge result="e1dec255-fc52-490c-81e6-ec51c06c6f94">
+            <feMergeNode in="892e3072-2155-4be7-a780-037095258086"></feMergeNode>
+            <feMergeNode in="bfbb0a2c-858a-46fb-b50f-c78cd1764a44"></feMergeNode>
+        </feMerge>
+    </filter>
+</svg>

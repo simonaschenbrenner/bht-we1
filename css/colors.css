@@ -1,0 +1,169 @@
+/* 
+ * Web Engineering WS 20/21
+ * Semsterprojekt SPA "Blogger"
+ * Gruppe 12
+ * Simon Nunez Aschenbrenner (908606)
+ */
+
+/* COLORS */
+
+:root {
+    --color-light-font: #000000;
+    --color-light-background: #ffffff;
+
+    --color-dark-font: #ffffff;
+    --color-dark-background: #000000;
+
+    --color-accent-light: #009fe3;
+    --color-accent-dark: #312783;
+
+    --color-warning-light: #ff0000;
+    --color-warning-dark: #800000;
+}
+
+/* Light */
+
+@media (prefers-color-scheme: light) {
+
+    /* General */
+
+    body {
+        color: var(--color-light-font);
+        background-color: var(--color-light-background);
+    }
+
+    button {
+        background-color: var(--color-light-background);
+        border-color: var(--color-accent-light);
+        color: var(--color-light-font);
+    }
+    button:hover {
+        background-color: var(--color-accent-light);
+    }
+    button:active {
+        background-color: var(--color-accent-dark);
+        color: var(--color-dark-font);
+    }
+
+    .link:active {
+        color: var(--color-accent-dark);
+    }
+
+    .warn {
+        border-color: var(--color-warning-light);
+    }
+    .warn:hover {
+        background-color: var(--color-warning-light);
+    }
+    .warn:active {
+        background-color: var(--color-warning-dark);
+    }
+
+    .input {
+        background-color: var(--color-light-background);
+        border-color: var(--color-accent-light);
+        color: var(--color-light-font);
+    }
+
+    ::selection {
+        background-color: var(--color-accent-light);
+    }
+
+    ::placeholder {
+        color: var(--color-accent-light);
+    }
+
+    #user-nav {
+        background-color: var(--color-light-background);
+    }
+
+    #auth-status {
+        color: var(--color-accent-dark);
+    }
+
+    #current-blog-slot {
+        background: var(--color-accent-light);
+    }
+
+    /* Logo */
+
+    .back {
+        fill: var(--color-accent-light);
+    }
+    .front {
+        fill: var(--color-accent-dark);
+    }
+}
+
+/* Dark */
+
+@media (prefers-color-scheme: dark) {
+
+    /* General */
+
+    body {
+        color: var(--color-dark-font);
+        background-color: var(--color-dark-background);
+    }
+
+    button {
+        background-color: var(--color-dark-background);
+        border-color: var(--color-accent-dark);
+        color: var(--color-dark-font);
+    }
+    button:hover {
+        background-color: var(--color-accent-dark);
+    }
+    button:active {
+        background-color: var(--color-accent-light);
+    }
+
+    .link:active {
+        color: var(--color-accent-light);
+    }
+
+    .warn {
+        border-color: var(--color-warning-dark);
+    }
+    .warn:hover {
+        background-color: var(--color-warning-dark);
+    }
+    .warn:active {
+        background-color: var(--color-warning-light);
+    }
+
+    .input {
+        background-color: var(--color-dark-background);
+        border-color: var(--color-accent-dark);
+        color: var(--color-dark-font);
+    }
+
+    ::selection {
+        background-color: var(--color-accent-light);
+    }
+
+    ::placeholder {
+        color: var(--color-accent-dark);
+    }
+
+    #user-nav {
+        background-color: var(--color-dark-background);
+    }
+
+    #auth-status {
+        color: var(--color-accent-light);
+    }
+
+    #current-blog-slot {
+        background: var(--color-accent-dark);
+    }
+
+    /* Logo */
+    
+    .back {
+        fill: var(--color-accent-dark);
+    }
+    .front {
+        fill: var(--color-accent-light);
+    }
+}
